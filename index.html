@@ -20,7 +20,16 @@ Here's what happens step by step:
     as the index) holds the version of the file with the first modification.
 </p>
 
+<p>
+    Further Modification: You modify the file again and stage it once more. This overwrites the previous version of the
+    file in the staging area with the latest changes. Git does not keep two versions of the same file in the staging
+    area—it always stores only the most recent version that was staged.
+    <br>
+    Commit: When you commit the changes (git commit -m "This is new"), Git will commit the version of the file that is
+    currently in the staging area, which is the file with the most recent modification.
+</p>
 
+<cite>-Ansh Vikalp</cite>
 
 </body>
 
