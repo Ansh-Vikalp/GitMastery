@@ -4,52 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive Git Learning</title>
+
 </head>
 
 <body>
-    <h1>This is header in V2</h1>
-    <p style="text-align: center; color: blueviolet;">This is some paragraph in 3<sup>rd</sup> commit V3 </p>
+    <header>
+        <img src="NA.png" width="400" alt="None">
+        <h1>Learning Git and GitHub</h1>
+    </header>
 
-    <blockquote>
+
+    <!-- <p id="interactive-paragraph">This is some paragraph in 3<sup>rd</sup> commit V3</p>  -->
+
+
+
+    <!-- Added Explanation of Git -->
+    <section class="git-section">
+        <h2>What is Git?</h2>
+        <p>Git is a free and open-source distributed version control system designed to handle everything from small to
+            very large projects with speed and efficiency. It allows developers to track changes in source code and
+            collaborate with others on shared projects.</p>
+
+        <h2>How to Use Git</h2>
+        <ul>
+            <li><span>1. Initialize a Repository:</span> Run <code>git init</code> in your project folder to create a
+                new Git repository.</li>
+            <li><span>2. Track Changes:</span> Use <code>git add file-name</code> to stage changes for commit.</li>
+            <li><span>3. Commit Changes:</span> Save changes to the repository with <code>git commit -m "commit
+                    message"</code>.</li>
+            <li><span>4. View History:</span> Use <code>git log</code> to see the commit history and details of each
+                commit.</li>
+            <li><span>5. Branching:</span> Create a new branch using <code>git branch branch-name</code> and switch to
+                it using <code>git checkout branch-name</code>.</li>
+            <li><span>6. Merge Branches:</span> Combine changes from different branches with <code>git merge
+                    branch-name</code>.</li>
+            <li><span>7. Push to Remote:</span> If you're working with a remote repository (like GitHub), use
+                <code>git push origin branch-name</code> to upload your changes.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Updated blockquote with the new styling -->
+    <section class="git-explanation">
+        <h2>Fact to know?</h2>
         <p>In this scenario, when you modify a file, stage it, modify it again, and then stage the new modification
-            without
-            committing, Git will only commit the latest version of the file.
-        </p>
-
-
+            without committing, Git will only commit the latest version of the file.</p>
         <p>Here's what happens step by step:</p>
-
-        <p>
-            <b>Initial Modification:</b> You modify the file and stage it (git add file). At this point, the staging
-            area
-            (also
-            known
-            as the index) holds the version of the file with the first modification.
-        </p>
-
-        <p>
-            <b>Further Modification:</b> You modify the file again and stage it once more. This overwrites the previous
-            version of
-            the
-            file in the staging area with the latest changes. Git does not keep two versions of the same file in the
-            staging
-            area—it always stores only the most recent version that was staged.
-
-
-        </p>
-
-        <p>
-            <b>Commit:</b> When you commit the changes (git commit -m "This is new"), Git will commit the version of the
-            file that is currently in the staging area, which is the file with the most recent modification.
-        </p>
-
+        <p><b>Initial Modification:</b> You modify the file and stage it (git add file). At this point, the staging
+            area holds the version of the file with the first modification.</p>
+        <p><b>Further Modification:</b> You modify the file again and stage it once more. This overwrites the previous
+            version of the file in the staging area with the latest changes.</p>
+        <p><b>Commit:</b> When you commit the changes (git commit -m "This is new"), Git will commit the version of the
+            file that is currently in the staging area, which is the file with the most recent modification.</p>
         <cite>-Ansh Vikalp</cite>
-    </blockquote>
-
-
-
-    <img src="./kalaManus.jpg" height="100" width="100" alt="devil" />
+    </section>
 
 </body>
 

@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: darkslateblue;
+}
+
+p {
+    text-align: center;
+    color: blueviolet;
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: deepskyblue;
+}
+
+.git-section,
+.git-explanation {
+    background-color: #e8f0fe;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.git-section h2,
+.git-explanation h2 {
+    color: darkcyan;
+}
+
+.git-section p,
+.git-explanation p {
+    color: #333;
+}
+
+.git-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.git-section li {
+    padding: 8px 0;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+.git-section li span {
+    font-weight: normal;
+    color: darkblue;
+}
