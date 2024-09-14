@@ -1,3 +1,12 @@
+.version-text {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: gray;
+    font-style: italic;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -28,22 +37,6 @@ img {
     border-radius: 50%;
 }
 
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: dodgerblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: deepskyblue;
-}
-
 .git-section,
 .git-explanation {
     background-color: #e8f0fe;
@@ -62,18 +55,21 @@ button:hover {
     color: #333;
 }
 
-.git-section ul {
+.git-section ul,
+.git-explanation ul {
     list-style: none;
     padding: 0;
 }
 
-.git-section li {
+.git-section li,
+.git-explanation li {
     padding: 8px 0;
     font-weight: bold;
     color: darkslategray;
 }
 
-.git-section li span {
+.git-section li span,
+.git-explanation li span {
     font-weight: normal;
     color: darkblue;
 }

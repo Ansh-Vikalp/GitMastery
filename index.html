@@ -13,12 +13,11 @@
     <header>
         <img src="NA.png" width="400" alt="None">
         <h1>Learning Git and GitHub</h1>
+        <span class="version-text">V ⪧11.0</span>
     </header>
 
     <!-- Addded in  V10 -->
     <hr class="animated-hr">
-
-    <!-- <p id="interactive-paragraph">This is some paragraph in 3<sup>rd</sup> commit V3</p>  -->
 
 
 
@@ -50,17 +49,56 @@
 
     <!-- Updated blockquote with the new styling -->
     <section class="git-explanation">
-        <h2>Fact to know?</h2>
-        <p>In this scenario, when you modify a file, stage it, modify it again, and then stage the new modification
-            without committing, Git will only commit the latest version of the file.</p>
-        <p>Here's what happens step by step:</p>
-        <p><b>Initial Modification:</b> You modify the file and stage it (git add file). At this point, the staging
-            area holds the version of the file with the first modification.</p>
-        <p><b>Further Modification:</b> You modify the file again and stage it once more. This overwrites the previous
-            version of the file in the staging area with the latest changes.</p>
-        <p><b>Commit:</b> When you commit the changes (git commit -m "This is new"), Git will commit the version of the
-            file that is currently in the staging area, which is the file with the most recent modification.</p>
-        <cite>-Ansh Vikalp</cite>
+        <h2>Repeted Modification</h2>
+        <ul>
+            <li><span>1. Initial Modification:</span> You modify the file and stage it (git add file). At this point,
+                the
+                staging
+                area holds the version of the file with the first modification.</li>
+            <li><span>2. Further Modification:</span> You modify the file again and stage it once more. This overwrites
+                the
+                previous
+                version of the file in the staging area with the latest changes.</li>
+            <li><span>3. Commit Changes:</span> When you commit the changes <code>git commit -m "This is new"</code>,
+                Git
+                will commit the version of the
+                file that is currently in the staging area, which is the file with the most recent modification.</li>
+            <li><span>4. View History:</span> Use <code>git log</code> to see the commit history and details of each
+                commit.</li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="git-explanation">
+        <h2>Working with Remote Repository</h2>
+        <ul>
+            <li><span>1. git pull:</span> The git pull command is used to fetch and merge changes from a remote
+                repository to your local repository.
+                <code>git pull origin main
+            </code>
+                If we have alredy used <code>git push -u origin master/main</code> Then there is no need to specify name
+                of remote repo(origin) & branch (main/master).
+                We can simple use <code>git pull</code>
+            </li>
+            <li><span>2. git push:</span> The git push command is used to send your committed changes to the remote
+                repository
+                <code>git push</code> will pushes the local changes in the master branch to the master branch of the
+                remote repository.
+            </li>
+            <li><span>3. git clone:</span> The git clone command is used to create a copy of an existing remote
+                repository to your local machine
+                <code>git clone repository-url </code>
+                The cloned repository contains all files along with tracked history of all commits so a tester can use
+                these commits by git show commit-id:index.html
+                or cat index.html to see content in latest commit. In case after cloning the remote repo has been alterd
+                then Tester can furthur fetch the latest new changes into their cloned reop using
+                <code>git pull</code> request.
+            </li>
+
+        </ul>
+
     </section>
 
 </body>
