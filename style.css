@@ -75,9 +75,42 @@ img {
 }
 
 
+.git-link {
+    color: #FF0080;
+    font-weight: bold;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(255, 0, 128, 1), rgba(0, 204, 255, 1));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+}
+
+.git-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FF0080;
+    transition: width 0.4s ease-in-out;
+}
+
+.git-link:hover::after {
+    width: 100%;
+}
+
+.git-link:hover {
+    background: linear-gradient(90deg, rgba(0, 204, 255, 1), rgba(255, 0, 128, 1));
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scale(1.1);
+}
+
 .animated-hr {
-    width: 50%;
-    height: 5px;
+    width: 70%;
+    height: 4px;
     border: none;
     margin: 20px auto;
     background: linear-gradient(90deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
@@ -102,4 +135,68 @@ img {
         box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.5);
         transform: scaleX(1);
     }
+}
+
+
+
+header img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 2px solid #FF0080;
+    /* Pink border for visual appeal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    /* Increase shadow on hover */
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.nav-section {
+    margin-top: auto;
+    /* Pushes the nav section to the bottom */
+    padding: 20px;
+    background-color: #f4f4f4;
+    /* Background color to match the page */
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Positions items at the extreme ends */
+    align-items: center;
+    /* Vertically centers the buttons */
+    padding: 0 20px;
+    /* Adds padding to ensure buttons don't touch the edges */
+}
+
+.nav-buttons .git-link {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(255, 0, 128, 1), rgba(0, 204, 255, 1));
+    -webkit-background-clip: text;
+    color: transparent;
+
+    /* Border to match the link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-buttons .git-link:hover {
+    color: transparent;
+    transform: scale(1.05);
 }
