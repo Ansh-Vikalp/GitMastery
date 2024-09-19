@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool.css">
+    <title>Committing Changes</title>
+</head>
+
+<body>
+    <header>
+        <h1>Committing Changes</h1>
+    </header>
+
+    <section>
+        <h2>Create a New file</h2>
+        <p>Create a new file called <code>index.html</code> in your project directory <q><i>Learning Git</i></q> in vs
+            code and, make sure you are in progect directory</p>
+        <p>Add simple HTML Code:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Learning VCS&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <p><strong>git status:</strong> Let you to see the current state of your repository.</p>
+        <pre><code>git status
+No Commit yet
+Untracked files
+    index.hml
+nothing added to commit but untracked files present
+(use "git add" to track)
+</code></pre>
+
+
+        <h2>Staging Files</h2>
+        <p>Before creating a commit, you need to stage the files you want to include. Use the <code>git add</code>
+            command to stage files:</p>
+        <pre><code>git add &lt;filename1&gt; &lt;filename2&gt; &lt;filename3&gt;</code></pre>
+        <p>To stage all files, use:</p>
+        <pre><code>git add .</code></pre>
+
+        <h2>Committing Changes</h2>
+        <p>Once your changes are staged, commit them to the repository with a descriptive message:</p>
+        <pre><code>git commit -m "Your commit message"</code></pre>
+        <p>Commit messages should be clear and concise, describing the changes made in the commit.</p>
+
+        <h2>Viewing Commit History</h2>
+        <p>To view the history of commits in the repository, use the <code>git log</code> command:</p>
+        <pre><code>git log</code></pre>
+        <p>This command will show a list of commits, including the commit ID, author, date, and commit message.</p>
+    </section>
+
+    <nav>
+        <a href="create-repo.html">Back: Creating a Git Repository</a> |
+        <a href="working-with-branches.html">Next: Working with Branches</a>
+    </nav>
+</body>
+
+</html>

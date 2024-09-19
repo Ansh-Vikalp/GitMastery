@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool.css">
+    <title>Working Directory & Staging Area</title>
+</head>
+
+<body>
+    <header>
+        <h1>Working Directory & Staging Area</h1>
+    </header>
+
+    <section>
+        <h2>Working Directory</h2>
+        <p>The working directory contains all the files in your project. You make changes to files here, but Git doesn't
+            start tracking those changes until you add them to the staging area.</p>
+
+
+        <h2>1. Untracked Files</h2>
+        <p>Untracked files are files that Git is not yet tracking. They exist in your working directory but have not
+            been added to the Git index (staging area) for tracking.</p>
+
+        <p><strong>How It Happens:</strong><br>
+            When you create a new file in your project directory, it will initially be untracked.<br>
+            Git will recognize that the file exists but won’t include it in version control unless explicitly added.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+Untracked files:
+  (use <code>git add &lt;file&gt;...</code> to include in what will be committed)
+    newfile.txt
+    </pre>
+
+        <p><strong>Actions:</strong><br>
+            Track the file by using the <code>git add</code> command:</p>
+        <pre>
+<code>git add newfile.txt</code></pre>
+        <p>After adding, the file moves to the staged state.</p>
+
+        <h2>2. Modified Files</h2>
+
+        <p>A file becomes "modified" when it is being tracked by Git (i.e., it has been committed or staged before) and
+            has been changed in the working directory but not yet staged for the next commit.</p>
+
+        <p><strong>How It Happens:</strong><br>
+            When you edit a tracked file, Git detects the change but won’t automatically include it in the next commit
+            unless you explicitly stage it.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+Changes not staged for commit:
+  (use <code>git add &lt;file&gt;...</code> to update what will be committed)
+    modified:   myfile.txt
+    </pre>
+
+        <p><strong>Actions:</strong><br>
+            Stage the file by using the <code>git add</code> command:</p>
+        <pre>
+<code>git add myfile.txt</code></pre>
+        <p>This moves the file from the modified state to the staged state.</p>
+
+        <p>If you don’t want to keep the changes, you can discard them using:</p>
+        <pre>
+<code>git restore myfile.txt</code></pre>
+
+        <h2>3. Staged Files</h2>
+
+        <p>A file becomes "staged" when changes to it are added to the staging area (also called the index). These
+            changes are now prepared to be included in the next commit.</p>
+
+        <p><strong>How It Happens:</strong><br>
+            After modifying a file, you use <code>git add</code> to stage it. This tells Git to include the changes in
+            the next commit.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+Changes to be committed:
+  (use <code>git restore --staged &lt;file&gt;...</code> to unstage)
+    modified:   myfile.txt
+    </pre>
+
+        <p><strong>Actions:</strong><br>
+            Commit the file by using the <code>git commit</code> command:</p>
+        <pre>
+<code>git commit -m "Updated myfile.txt"</code></pre>
+        <p>This moves the file from the staged state to the committed state.</p>
+
+        <p>If you want to unstage the file, you can use:</p>
+        <pre><code>git restore --staged myfile.txt</code></pre>
+        <p>This will move the file back to the modified state.</p>
+
+        <h2>4. Committed Files</h2>
+
+        <p>A file is "committed" when the changes have been saved to the local Git repository. This means that the
+            current state of the file is safely stored in Git’s version history.</p>
+
+        <p><strong>How It Happens:</strong><br>
+            After staging changes, you use <code>git commit</code> to record them permanently in the repository's
+            history.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+On branch main
+nothing to commit, working tree clean
+    </pre>
+
+        <p><strong>Actions:</strong><br>
+            No immediate action is needed if the file is in the committed state.</p>
+
+        <p>You can view the commit history and see the committed changes using <code>git log</code>:</p>
+        <pre>
+<code>git log</code></pre>
+
+        <p>If you make new changes to a committed file, it moves back to the modified state.</p>
+
+
+
+        <h2>5. Both Modified (Conflict)</h2>
+        <p>
+            In some situations, especially during merges, you may run into conflicts where the same file is modified by
+            both you and someone else.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use <code>git merge --abort</code> to abort the merge)
+
+Unmerged paths:
+  (use <code>git add &lt;file&gt;...</code> to mark resolution)
+    both modified:   conflictfile.txt
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            <code>Unmerged paths:</code> The file <code>conflictfile.txt</code> has conflicts because both you and the
+            other branch have modified it.
+        </p>
+
+        <p><strong>Action:</strong><br>
+            You must manually resolve the conflicts, then mark the file as resolved by adding it again with
+            <code>git add &lt;file&gt;</code>. Finally, commit the merge.
+        </p>
+
+        <h2>6. Deleted Files</h2>
+        <p>If you delete a file from the working directory, Git will recognize that it’s been removed and mark it as
+            deleted.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+Changes not staged for commit:
+  (use <code>git add/rm &lt;file&gt;...</code> to update what will be committed)
+    deleted:    deletedfile.txt
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            <code>deleted:</code> <code>deletedfile.txt</code>: The file <code>deletedfile.txt</code> has been deleted
+            but is not yet staged for the deletion to be recorded.
+        </p>
+
+        <p><strong>Action:</strong><br>
+            You need to stage the deletion using <code>git rm &lt;file&gt;</code> (or <code>git add &lt;file&gt;</code>
+            for changes) and then commit it.</p>
+
+        <h2>7. Staged Deleted Files</h2>
+        <p>If you delete a file and then stage the deletion, Git will show it as staged for deletion.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+Changes to be committed:
+  (use <code>git restore --staged &lt;file&gt;...</code> to unstage)
+    deleted:    deletedfile.txt
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            <code>deleted:</code> <code>deletedfile.txt</code>: The file has been deleted and the deletion is staged.
+        </p>
+
+        <p><strong>Action:</strong><br>
+            You can commit this change to finalize the deletion.</p>
+
+        <h2>8. Renamed Files</h2>
+        <p>When you rename a file, Git will detect it and display the old and new filenames.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+Changes to be committed:
+  (use <code>git restore --staged &lt;file&gt;...</code> to unstage)
+    renamed:    oldname.txt -> newname.txt
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            <code>renamed:</code> <code>oldname.txt -> newname.txt</code>: Git has detected that
+            <code>oldname.txt</code> has been renamed to <code>newname.txt</code> and the change is staged.
+        </p>
+
+        <p><strong>Action:</strong><br>
+            You can commit this change to record the file rename.</p>
+
+        <h2>9. Clean Working Directory</h2>
+        <p>After you have committed all changes, your working directory will be clean, and <code>git status</code> will
+            indicate this.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+nothing to commit, working tree clean
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            <code>nothing to commit, working tree clean:</code> All changes have been committed, and there are no
+            untracked files or modifications.
+        </p>
+
+        <h2>10. Stashed Changes</h2>
+        <p>If you temporarily store changes with <code>git stash</code>, the <code>git status</code> command will show
+            a clean working directory, but the stashed changes are hidden and can be reapplied later.</p>
+
+        <p><strong>Status in git status:</strong></p>
+        <pre>
+$ git status
+On branch main
+nothing to commit, working tree clean
+    </pre>
+
+        <p><strong>Explanation:</strong><br>
+            Even though your working directory is clean, your changes are stored in the stash and can be restored later
+            with <code>git stash pop</code>.</p>
+
+        <h2>11. Files Ignored by Git</h2>
+        <p>Sometimes, you may have files that you want Git to ignore (e.g., configuration files, build artifacts).
+            These are specified in a <code>.gitignore</code> file. Ignored files do not show up in the
+            <code>git status</code> output.
+        </p>
+
+        <p><strong>Example .gitignore file:</strong></p>
+        <pre>
+<code>node_modules/
+*.log
+.env</code>
+    </pre>
+
+        <p>These files won’t appear when you run <code>git status</code> and won’t be tracked by Git.</p>
+
+
+
+    </section>
+
+    <nav>
+        <a href="setup-git.html">Back: Setting Up Git</a> |
+        <a href="create-repo.html">Next: Creating a Git Repository</a>
+    </nav>
+</body>
+
+</html>

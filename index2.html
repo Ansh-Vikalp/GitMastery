@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool.css">
+    <title>Introduction to Git & Version Control</title>
+</head>
+
+<body>
+    <header>
+        <h1>Introduction to Git & Version Control</h1>
+    </header>
+
+    <section>
+        <h2>What is Git?</h2>
+        <p>Git is a distributed version control system (VCS) designed to handle everything from small to large projects
+            with
+            speed and efficiency. It tracks changes in source code and allows multiple developers to collaborate on the
+            same project.
+
+        </p>
+        <p>It was created by Linus Torvalds in 2005 to manage development of Linux Kernel. Although, Git is highly
+            popular for managing code, but can also be used to track changes in any files types- text doc., images etc.
+            Git is a tool that helps multiple people work on the same project code by tracking and managing changes to
+            files.
+        </p>
+
+
+        <h2>Why Version Control Matters?</h2>
+        <p>Version control is essential for tracking changes, collaboration, and maintaining a history of code changes
+            over time. It allows developers to work together without overwriting each other's work.
+
+            <br>
+
+            Evertime anyone is making changes whether it is adding a sentence to document or alternating a line or even
+            deleting some lines then the VCS records and saves the outcome with accurate timestamp.
+        </p>
+
+        <h2>Centralized vs Distributed VCS</h2>
+        <ul>
+            <li><strong>Centralized VCS:</strong> One central server stores all files, and developers commit changes
+                directly to it. Examples: SVN, CVS.</li>
+            <li><strong>Distributed VCS:</strong> Every developer has a local copy of the project. They can work
+                independently and sync changes. Example: Git.</li>
+        </ul>
+
+        <h2>Key Concepts</h2>
+        <ul>
+            <li><strong>Repository:</strong> A directory that holds the project's files and the history of all changes.
+            </li>
+            <li><strong>Commit:</strong> A snapshot of your project's current state.</li>
+            <li><strong>Branch:</strong> A version of the project used to work on new features without affecting the
+                main codebase.</li>
+            <li><strong>Merge:</strong> Combining different branches into one.</li>
+        </ul>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Version Control:</strong>Git keeps a detailed history of all changes made to a project. This
+                includes when the change was made, who made it, and why (through commit messages).</li>
+            <li><strong>Distributed System:</strong>Each developer has a complete copy of the entire project and its
+                history on their local machine. This means that Git does not rely on a central server, and changes can
+                be made and tracked even offline.</li>
+            <li><strong>Collaboration:</strong> Multiple developers can work on the same project, even on the same
+                files, without overwriting each other's work. Git handles changes by providing tools like branches and
+                merges.</li>
+            <li><strong>Branching and Merging:</strong>
+                Git allows developers to create branches to work on features or fixes in isolation from the main
+                codebase. Once the changes are complete, the branch can be merged back into the main project.</li>
+            <li><strong>Snapshots, Not Differences:</strong>Git saves entire snapshots of your file system rather than
+                recording changes line by line. This makes it more efficient in tracking history and helps in reverting
+                back to any previous version of the project.</li>
+            <li><strong>Speed and Efficiency:</strong> Git is designed to handle projects of all sizes efficiently, from
+                small personal projects to large enterprise-level repositories with millions of files and developers.
+            </li>
+        </ul>
+    </section>
+
+
+
+    <nav>
+        <a href="setup-git.html">Next: Setting Up Git Locally</a>
+    </nav>
+</body>
+
+</html>

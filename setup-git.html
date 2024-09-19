@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool.css">
+    <title>Setting Up Git Locally</title>
+</head>
+
+<body>
+    <header>
+        <h1>Setting Up Git Locally</h1>
+    </header>
+
+    <section>
+        <h2>Installing Git</h2>
+        <p>Git can be installed on various platforms. Here's how to set it up:</p>
+        <ul>
+            <li>Download Git from the <a href="https://git-scm.com/">official site</a>.Select the desired OS (Windows)
+            </li>
+            <li>Now download the latest version <i>2.46.0</i> by selecting <i>64-bit GIT Windows setup</i> if your
+                system support 64 bit </li>
+            <li>Double click the installer in your downloads. Select the Drive (<i>D:</i>) where you want to install.
+            </li>
+            <li>Run the installer and follow the prompts. Next -> Next -> Next -> Install</li>
+        </ul>
+        <p>The git installer gives you three ways to use it</p>
+        <ol>
+            <li>GIT Bash Shell (Linux Users)</li>
+            <li>GIT Cmd Shell (Windows Users)</li>
+            <li>GIT GUI (GUI Users)</li>
+        </ol>
+
+        <p>Verify the Git installation by opening up cmd prompt and executing:
+        </p>
+        <pre><code>C:\Users\Asus\>git --version</code>
+git version 2.46.0.windows.1</pre>
+
+        <h2>Getting Started With Git Cmds</h2>
+        <p>You can use your git cmds inside vs code integrated git or zsh terminal or you can even use external git
+            bash. We will be using VS Code here</p>
+        <ul>
+            <li>Open up VS code new window</li>
+            <li>Create a new folder <q>Lerning Git</q> that contains all our project files & its version control has to
+                be done.</li>
+            <li>You can use either <strong>powershell</strong> or <strong>bash</strong> terminal</li>
+            <li>Make sure you are inside <em>Learning Git</em>- <br>
+                <small> PS D:\Learning Git> <br>
+                    Asus@LAPTOP-679656TL MINGW64 /d/Learning Git (master)$</small>
+            </li>
+
+        </ul>
+
+        <h2>Configuring Git</h2>
+        <p>After installation, set up Git with your user information to track your commits.
+            <br>
+            These Configuration plays Important role in How your contribution are identified, tracked <small>&</small>
+            merged within a repository and across collabrative platform like GitHub.
+        </p>
+
+        <h5>Different Levels of Setting:</h5>
+        <small>
+            <ol>
+                <li><strong>Local: </strong>Setting applies to only the specific repo where your cmd runs </li>
+                <li><strong>Global: </strong>Setting applies to all the repos on your loacl machine for one specific
+                    user
+                    that is logged-in.</li>
+                <li><strong>System: </strong>Setting applies to all the users on the syatem and to all their repos.</li>
+            </ol>
+        </small>
+
+
+        <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+
+        <h2>Checking Configuration</h2>
+        <p>Verify your Git configuration by running:</p>
+        <pre><code>git config --list</code></pre>
+    </section>
+
+    <nav>
+        <a href="index.html">Back: Introduction to Git</a> |
+        <a href="working-directory-staging.html">Next: Working Directory & Staging Area</a>
+    </nav>
+</body>
+
+</html>

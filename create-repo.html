@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool.css">
+    <title>Creating a Git Repository</title>
+</head>
+
+<body>
+    <header>
+        <h1>Creating a Git Repository</h1>
+    </header>
+
+    <section>
+        <p>Git repo is a storage area where your project files and their complete version history are tarcked and
+            managed by git</p>
+        <p>By default Git does not track every files present in your local system. We need to tell git which files we
+            want to track by initializing a <i>.git</i> folder inside our Project folder.</p>
+        <h2>Initializing a Repository</h2>
+        <p>To create a new repository in an existing project directory, use the <code>git init</code> command:</p>
+        <pre><code>git init</code></pre>
+        <p>This command sets up a Git repository in your current directory. A hidden <code>.git</code> directory will be
+            created to store all the version history and configuration files.</p>
+        <p>You can see <code>.git</code> folder by :</p>
+        <pre><code>$ls -lah
+ total 88k
+ drwxr-xr-x 1 Asus 197121 0 Sep 9 21:32 &nbsp;./
+ drwxr-xr-x 1 Asus 197121 0 Sep 9 21:22 &nbsp;../
+ drwxr-xr-x 1 Asus 197121 0 Sep 9 21:32 &nbsp;.git</code></pre>
+
+        <h2>Cloning an Existing Repository</h2>
+        <p>If you want to work on an existing project, you can clone it from a remote source (e.g., GitHub):</p>
+        <pre><code>git clone https://github.com/Ansh-Vikalp/GitMastery.git<repository-url></code></pre>
+        <p>You can either clone your remote repo from your account to your local system or clone someone else remote
+            repo by first forking it to your account then using the HTTPS/SSH code to clone it to your local system.</p>
+
+
+
+
+        <nav>
+            <a href="working-directory-staging.html">Back: Working Directory & Staging Area</a> |
+            <a href="committing-changes.html">Next: Committing Changes</a>
+        </nav>
+</body>
+
+</html>
