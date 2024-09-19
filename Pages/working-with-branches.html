@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cool.css">
+    <title>Working with Branches</title>
+</head>
+
+<body>
+    <header>
+        <h1>Working with Branches</h1>
+    </header>
+
+    <section>
+        <h2>What are Branches?</h2>
+        <p>Branches in Git are separate workspaces that allow you to work on specific tasks (such as feature development
+            or bug fixes) without affecting the main codebase. By default, the main branch is usually named
+            <code>main</code> or <code>master</code>, and developers often create additional branches to keep the
+            development isolated. This allows for parallel development and easy integration later through merging.
+        </p>
+
+        <h2>Creating a New Branch</h2>
+        <p>To create a new branch, use the <code>git branch</code> command followed by the branch name:</p>
+        <pre><code>git branch &lt;branch-name&gt;</code></pre>
+        <p>This will create a new branch but will not switch to it automatically. If you want to create and switch to
+            the branch immediately, use:</p>
+        <pre><code>git checkout -b &lt;branch-name&gt;</code></pre>
+
+        <h2>Switching Between Branches</h2>
+        <p>Once you have multiple branches, you can switch between them using the <code>git checkout</code> command:</p>
+        <pre><code>git checkout &lt;branch-name&gt;</code></pre>
+
+        <h2>Listing Branches</h2>
+        <p>To see a list of all the branches in your repository, use the <code>git branch</code> command:</p>
+        <pre><code>git branch
+*<span style="color: green;"> master</span>
+testing</code></pre>
+        <p>The current branch you're on will be indicated by an asterisk (*) next to its name.</p>
+        <p>To see more detail verbose of branch is to check which branch is set as upstream to orgin:</p>
+        <pre><code>git branch -vv</code>
+* <span style="color: green;">master</span> e391cc5 <span style="color: blue;">[origin/master]</span> added codes
+testing 1e20859  One file renamed</pre>
+
+
+        <h2>Deleting a Branch</h2>
+        <p>Once a branch is no longer needed, you can delete it to keep your repository clean. To delete a branch that
+            has already been merged, use:</p>
+        <pre><code>git branch -d &lt;branch-name&gt;</code></pre>
+        <p>If the branch has not been merged and you want to force delete it, use:</p>
+        <pre><code>git branch -D &lt;branch-name&gt;</code></pre>
+
+        <h2>Renaming a Branch</h2>
+        <p>If you want to rename the current branch, you can do so with:</p>
+        <pre><code>git branch -m &lt;new-branch-name&gt;</code></pre>
+
+        <h2>Remote Branches</h2>
+        <p>Branches that exist on a remote repository (such as GitHub) can be fetched with <code>git fetch</code>. To
+            switch to a remote branch, use:</p>
+        <pre><code>git checkout -t origin/&lt;branch-name&gt;</code></pre>
+        <p>This will create a local tracking branch that follows the remote branch.</p>
+
+        <nav>
+            <a href="view-old-files.html">Back</a>
+            <a href="merging-and-conflicts.html">Next</a>
+        </nav>
+
+    </section>
+
+
+</body>
+
+</html>

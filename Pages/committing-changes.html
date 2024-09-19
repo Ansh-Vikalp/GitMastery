@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cool.css">
+    <link rel="stylesheet" href="../cool.css">
     <title>Committing Changes</title>
 </head>
 
@@ -64,12 +64,57 @@ Author:Ansh Vikalp &nbsp;&lt;anshvikalp511@gmail.com&gt;
 My First Commit
 END</code></pre>
         <p>This command will show a list of commits, including the commit ID, author, date, and commit message.</p>
+
+        <h2>View Status</h2>
+        <p>Use <code>git status</code> to see status after out 1<sup>st</sup>commit</p>
+        <pre><code>git status
+On branch master
+            
+nothing to commit, working tree clean</code></pre>
+
+
+        <h2>Modifying Files</h2>
+        <p>Let's now modify our index.html file and then see it's status and finally commit it: </p>
+        <p>Add below line in <i>index.html</i>:</p>
+        <code>+ &lt;h1&gt;This is Version 1&lt;/h1&gt;</code>
+        <p><code>git diff: </code>It shows the diffrence b/w changes that has been, but not commited to previous
+            commited version</p>
+        <pre><code>git diff</code>
+<span style="color: green;">+ &lt;h1&gt;This is Version 1&lt;/h1&gt;</span></pre>
+        <p>Now, let's see the status of our repository:</p>
+        <pre><code>git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        <span style="color: red;">modified:   committing-changes.html</span>
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+        <p>Let's stage the changes by <code>git add *</code>,after that see status:
+        </p>
+
+        <p><code>git diff --cached: </code>It shows the diffrence b/w changes that has been staged, but not commited to
+            previous
+            commited version</p>
+        <pre><code>git diff --cached</code>
+<span style="color: green;">+ &lt;h1&gt;This is Version 1&lt;/h1&gt;</span></pre>
+
+        <pre><code>git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        <span style="color: green;">modified:   committing-changes.html</span>
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+
+        <p>Now commit it: <code>git commit -m "second Version"</code></p>
+
+        <nav>
+            <a href="create-repo.html">Back</a>
+            <a href="view-old-files.html">Next</a>
+        </nav>
     </section>
 
-    <nav>
-        <a href="create-repo.html">Back: Creating a Git Repository</a> |
-        <a href="working-with-branches.html">Next: Working with Branches</a>
-    </nav>
+
 </body>
 
 </html>

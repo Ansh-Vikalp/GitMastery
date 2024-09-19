@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cool.css">
     <title>Introduction to Git & Version Control</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            /* Align the link to the right */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #4caf50;
+            /* Green color for the link */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid #4caf50;
+            /* Underline effect on hover */
+            color: white;
+            /* Darker green on hover */
+        }
+
+        nav a:active {
+            color: #1b5e20;
+            /* Darker green when clicked */
+        }
+    </style>
 </head>
 
 <body>
@@ -76,13 +108,16 @@
                 small personal projects to large enterprise-level repositories with millions of files and developers.
             </li>
         </ul>
+
+        <nav>
+            <a href="Pages/setup-git.html">Next</a>
+        </nav>
+
     </section>
 
 
 
-    <nav>
-        <a href="setup-git.html">Next: Setting Up Git Locally</a>
-    </nav>
+
 </body>
 
 </html>

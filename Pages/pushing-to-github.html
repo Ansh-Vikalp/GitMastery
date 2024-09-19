@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cool.css">
+    <title>Pushing to GitHub & Collaborating</title>
+</head>
+
+<body>
+    <header>
+        <h1>Pushing to GitHub & Collaborating</h1>
+    </header>
+
+    <section>
+        <h2>Setting Up a Remote Repository</h2>
+        <p>Before you can push your local commits to GitHub, you need to link your local repository to a remote
+            repository. To
+            add a remote repository, use:</p>
+        <pre><code>git remote add origin &lt;repository-URL></code></pre>
+        <p>Here, <code>origin</code> is the default name for the remote repository, and the <code>repository-URL</code>
+            is the URL of your GitHub repository. You only need to do this once per repository.</p>
+
+        <h2>Pushing Commits to GitHub</h2>
+        <p>After committing changes locally, you can push them to your remote GitHub repository. To push commits from
+            your local branch to a remote branch, use the following command:</p>
+        <pre><code>git push origin &lt;branch-name&gt;</code></pre>
+        <p>For example, to push changes from a branch named <code>feature-branch</code> to GitHub:</p>
+        <pre><code>git push origin feature-branch</code></pre>
+        <p>If you're pushing to the remote repository for the first time, and the branch does not exist on GitHub, Git
+            will create the branch remotely. If you need to push all your branches, use:</p>
+        <pre><code>git push --all origin</code></pre>
+
+        <h2>Working with Pull Requests (PR)</h2>
+        <p>When working in teams or on collaborative projects, you often create branches for new features or bug fixes.
+            After pushing your changes to GitHub, you can create a pull request (PR) to propose that your changes be
+            merged into the main branch. This is a common practice in collaborative development, as it allows team
+            members to review your changes before merging.</p>
+        <p>Steps to create a pull request:</p>
+        <ol>
+            <li>Push your changes to a branch on GitHub.</li>
+            <li>Go to the GitHub repository in your browser.</li>
+            <li>Click on the "Pull Requests" tab, and then "New Pull Request".</li>
+            <li>Select the branch you want to merge into the main branch.</li>
+            <li>Add a title and description for the pull request, and submit it for review.</li>
+        </ol>
+        <p>Once the pull request is reviewed and approved, it can be merged into the main branch by either the author or
+            a collaborator with merge privileges.</p>
+
+        <h2>Pulling Changes from GitHub</h2>
+        <p>To keep your local repository up to date with the latest changes from the remote repository, you can fetch
+            and merge changes using <code>git pull</code>:</p>
+        <pre><code>git pull origin &lt;branch-name&gt;</code></pre>
+        <p>This will fetch the changes from the remote branch and merge them into your current local branch. For
+            example, to pull changes from the <code>main</code> branch:</p>
+        <pre><code>git pull origin main</code></pre>
+        <p>Alternatively, you can separate fetching and merging into two steps by using:</p>
+        <pre><code>git fetch origin
+git merge origin/&lt;branch-name&gt;</code></pre>
+        <p>The <code>fetch</code> command will download the latest changes, and <code>merge</code> will combine them
+            with your current branch.</p>
+
+        <h2>Cloning a Repository</h2>
+        <p>When you want to work on a project that is hosted on GitHub but not yet on your local machine, you can clone
+            the repository using the <code>git clone</code> command:</p>
+        <pre><code>git clone &lt;repository-URL&gt;</code></pre>
+        <p>This will create a local copy of the entire repository. For example, to clone a repository named
+            <code>my-repo</code> from GitHub:
+        </p>
+        <pre><code>git clone https://github.com/&lt;owner-username&gt;/&lt;owner-repo.git&gt;</code></pre>
+        <pre><code>Example-&nbsp;git clone <a href="https://github.com/Ansh-Vikalp/GitMastery.git" target="_blank">https://github.com/Ansh-Vikalp/GitMastery.git</a></code></pre>
+
+        <h2>Managing Collaborators</h2>
+        <p>When collaborating on a GitHub repository, it's essential to manage collaborators effectively. You can invite
+            others to your repository by going to the "Settings" tab on GitHub, clicking "Collaborators," and adding
+            their GitHub usernames. Once invited, they will have the ability to push, pull, and merge changes in the
+            repository.</p>
+
+        <h2>Forking a Repository</h2>
+        <p>If you don't have permission to push directly to a repository, you can fork it. Forking creates a copy of the
+            repository under your GitHub account, allowing you to make changes and submit pull requests to the original
+            repository. To fork a repository:</p>
+        <ol>
+            <li>Go to the repository page on GitHub.</li>
+            <li>Click the "Fork" button at the top right.</li>
+            <li>After making changes in your forked repository, you can submit a pull request to the original repository
+                for review.</li>
+        </ol>
+
+        <h2>Handling Merge Conflicts when Collaborating</h2>
+        <p>When multiple collaborators are working on the same repository, conflicts can occur if two or more people
+            change the same parts of the code. After pulling changes, you might need to resolve conflicts manually, as
+            described in the "Merging & Resolving Conflicts" section.</p>
+        <p>To handle a conflict after pulling changes:</p>
+        <ol>
+            <li>Edit the conflicting files to resolve the differences.</li>
+            <li>Stage the resolved files with <code>git add</code>.</li>
+            <li>Commit the resolved conflicts with <code>git commit</code>.</li>
+        </ol>
+
+        <h2>Best Practices for Collaboration</h2>
+        <ul>
+            <li><strong>Commit Frequently:</strong> Make small, frequent commits to avoid large, complicated merge
+                requests.</li>
+            <li><strong>Meaningful Commit Messages:</strong> Write clear and descriptive commit messages for better
+                history
+                tracking.</li>
+            <li><strong>Branching Strategy:</strong> Use a clear branching strategy, such as GitFlow or Feature
+                Branches, to avoid
+                messy conflicts and maintain an organized workflow.</li>
+            <li><strong>Code Reviews:</strong> Always have someone review your pull request before merging to maintain
+            </li>
+            <li><strong>Sync branches:</strong> After the pull request has been merged by the owner make sure to sync
+                all your remote and local branches
+                with owner remote repo. Use cmd:
+                <pre><code>git add remote upstream https://github.com/&lt;owner-username&gt;/&lt;owner-repo.git&gt; </code></pre>
+            </li>
+
+            <pre><code># sync your master branch locally with owner master if pull request made from master branch after merging locally
+git checkout master
+git fetch upstream
+git merge upstream/master
+#finally push changes to your remote forked
+git push origin master
+</code></pre>
+            <pre><code># sync your test branch locally with owner master if pull request made from test branch after merging locally
+git checkout master
+git fetch upstream
+git merge upstream/master
+#finally push changes to your remote forked
+git push origin test
+</code></pre>
+            </li>
+        </ul>
+
+        <nav>
+            <a href="merging-and-conflicts.html">Back</a>
+        </nav>
+
+    </section>
+
+
+</body>
+
+</html>

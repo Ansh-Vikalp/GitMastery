@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cool.css">
+    <title>View Old Files</title>
+</head>
+
+<body>
+    <header>
+        <h1>View Old Commited Files</h1>
+    </header>
+    <section>
+        <h2>View Files from Old Commits</h2>
+        <p>To see changes in files done in old commit we need unique Id of that commit.
+            For this we use <code>git log</code>.
+        </p>
+        <pre><code>git log
+commit rt4574fg5738897yu67277278272gt5t2 (HEAD -> master)
+Date: Tuesday,Sep 10 14:11:49 2024 +0300
+Author:Ansh Vikalp &nbsp;&lt;anshvikalp511@gmail.com&gt;
+
+Second Version
+
+commit 5834fg5738897yu67277278272gt5t2 
+Date: Tuesday,Sep 10 13:11:49 2024 +0300
+Author:Ansh Vikalp &nbsp;&lt;anshvikalp511@gmail.com&gt;
+
+My First Commit
+
+END</code></pre>
+
+        <p>Copy first commit id and then execute:</p>
+        <pre><code>git show &lt;commit-Id&gt;:&lt;specific-fileName-to-view&gt;
+ git show &lt;commit-Id&gt; (To see all files changes in that commit)
+</code></pre>
+
+
+        <pre><code>git show 5834fg5738897yu67277278272gt5t2:index.html
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Learning VCS&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+        <h2>Get Old Version With Git Checkout</h2>
+        <p>If our repository is quite large containing thousands of files and numeraous line of codes.
+            Then using git show to view files in terminal and what changed has been made is not convinent.
+            In such cases we use <code>git checkout</code> to get old version of a specific file
+            or all files from that old commit in our working directory and those files will appear with a status of
+            <code>modified</code>
+        </p>
+        <p>To view all files in working dir of old commit:</p>
+        <pre><code>git checkout &lt;commit-Id&gt; -- * </code></pre>
+        <p>To view specific file in working dir of old commit:</p>
+        <pre><code>git checkout &lt;commit-Id&gt; -- index.html </code></pre>
+
+        <p>Now, to get back to our latest commit:</p>
+        <pre><code>git checkout master -- *</code></pre>
+        <pre><code>git checkout master -- index.html</code></pre>
+
+        <nav>
+            <a href="committing-changes.html">Back</a>
+            <a href="working-with-branches.html">Next</a>
+        </nav>
+    </section>
+</body>
+
+</html>
