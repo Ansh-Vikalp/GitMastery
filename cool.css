@@ -11,15 +11,70 @@ body {
 
 header {
     background-color: #28a745;
-    /* Slightly darker green */
+    width: auto;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 30.2px;
+    position: relative;
+    /* Needed for positioning the image */
 }
 
 h1 {
     margin: 0;
+    text-align: center;
+    /* Centers the title horizontally */
 }
+
+footer {
+
+    text-align: right;
+    /* padding: 20px; */
+    margin: 20px;
+    font-size: 0.7em;
+    /* Slightly smaller font */
+    border-top: 0.7px solid #ffffff50;
+    /* Soft white border on top */
+}
+
+footer a {
+    color: rgb(33, 51, 183);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Styling for the logo image */
+header img {
+    position: absolute;
+    left: 150px;
+
+    /* Aligns the image to the left with some padding */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Vertically centers the image within the header */
+    width: 230px;
+    /* Adjust width as per your preference */
+    height: auto;
+    border-radius: 50%;
+    /* Makes the image oval/circular */
+    border: 2px solid #FF0080;
+    /* Adds a pink border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+/* Zoom effect and shadow increase on hover */
+header img:hover {
+    transform: scale(1.1) translateY(-50%);
+    /* Slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* Increased shadow on hover */
+}
+
 
 section {
     padding: 20px;
