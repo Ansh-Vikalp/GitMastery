@@ -181,14 +181,14 @@ nav a:active {
     nav {
         flex-direction: column;
         /* Stack nav items vertically */
-        align-items: flex-start;
+        align-items: center;
         /* Align items to the start */
     }
 
     nav a {
         margin: 5px 0;
         /* Space between links */
-        width: 100%;
+        width: 80%;
         /* Full width for links */
         text-align: center;
         /* Center text */
