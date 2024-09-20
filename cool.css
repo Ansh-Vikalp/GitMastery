@@ -12,27 +12,54 @@ body {
 header {
     background-color: #28a745;
     width: auto;
+    /* Full width */
     color: white;
-    padding: 30.2px;
+    padding: 30px;
     position: relative;
-    /* Needed for positioning the image */
+    text-align: center;
+    /* Center align header content */
+}
+
+header img {
+    position: absolute;
+    left: 60px;
+    /* Adjusted for desktop */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 230px;
+    /* Default width for desktop */
+    height: auto;
+    border-radius: 50%;
+    /* Oval shape */
+    border: 2px solid #FF0080;
+    /* Pink border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
+}
+
+/* Zoom effect and shadow increase on hover */
+header img:hover {
+    transform: scale(1.1) translateY(-50%);
+    /* Slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* Increased shadow on hover */
 }
 
 h1 {
     margin: 0;
-    text-align: center;
-    /* Centers the title horizontally */
+
 }
 
+/* Footer styling */
 footer {
-
     text-align: right;
-    /* padding: 20px; */
     margin: 20px;
     font-size: 0.7em;
-    /* Slightly smaller font */
+    /* Smaller font */
     border-top: 0.7px solid #ffffff50;
-    /* Soft white border on top */
+    /* Soft white border */
 }
 
 footer a {
@@ -44,48 +71,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
-/* Styling for the logo image */
-header img {
-    position: absolute;
-    left: 150px;
-
-    /* Aligns the image to the left with some padding */
-    top: 50%;
-    transform: translateY(-50%);
-    /* Vertically centers the image within the header */
-    width: 230px;
-    /* Adjust width as per your preference */
-    height: auto;
-    border-radius: 50%;
-    /* Makes the image oval/circular */
-    border: 2px solid #FF0080;
-    /* Adds a pink border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Soft shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s;
-    /* Smooth transition for hover effect */
-}
-
-/* Zoom effect and shadow increase on hover */
-header img:hover {
-    transform: scale(1.1) translateY(-50%);
-    /* Slight zoom */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    /* Increased shadow on hover */
-}
-
-
+/* Section styling */
 section {
     padding: 20px;
     background-color: #ffffff;
     /* White background */
     margin: 20px auto;
+    max-width: 800px;
+    /* Max width for larger screens */
     width: 80%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    /* Slightly more pronounced shadow */
+    /* Responsive width */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    /* Shadow */
     border-radius: 10px;
-    /* Slightly more rounded corners */
+    /* Rounded corners */
 }
 
 h2 {
@@ -118,24 +117,13 @@ code {
     font-size: 90%;
 }
 
-@media (max-width: 768px) {
-    section {
-        width: 95%;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px auto;
-    }
-}
-
+/* Navigation styling */
 nav {
     display: flex;
     justify-content: space-between;
-    /* Ensures the links are at opposite ends */
+    /* Links at opposite ends */
     align-items: center;
     padding: 10px;
-    /*margin-top: 20px; */
     border-top: 1px solid #4caf50;
     /* Green accent */
     position: relative;
@@ -143,26 +131,24 @@ nav {
 
 nav a {
     color: #4caf50;
-    /* Green color for the links */
+    /* Green color for links */
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     padding: 8px 16px;
-    margin: 10px 20px 10px 20px;
-    /* Margins on both left and right, plus bottom */
+    margin: 10px;
+    /* Uniform margins */
     border: 2px solid transparent;
     border-radius: 5px;
-    position: relative;
-    display: inline-block;
     transition: all 0.4s ease;
-    /* Smooth transition for hover effects */
+    /* Smooth transition */
 }
 
 nav a:hover {
     color: white;
     /* Change text color on hover */
     background: linear-gradient(90deg, #4caf50, #388e3c);
-    /* Gradient fill on hover */
+    /* Gradient fill */
     box-shadow: 0px 0px 8px rgba(76, 175, 80, 0.7);
     /* Glow effect */
     border-color: #4caf50;
@@ -177,5 +163,45 @@ nav a:active {
     background: linear-gradient(90deg, #388e3c, #4caf50);
     /* Reverse gradient on click */
     transform: scale(1.05);
-    /* Slight scale effect on click */
+    /* Slight scale effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1188px) {
+    header img {
+        display: none;
+        /* Hide image on mobile */
+    }
+
+    section {
+        width: 80%;
+        /* Full width for sections */
+    }
+
+    nav {
+        flex-direction: column;
+        /* Stack nav items vertically */
+        align-items: flex-start;
+        /* Align items to the start */
+    }
+
+    nav a {
+        margin: 5px 0;
+        /* Space between links */
+        width: 100%;
+        /* Full width for links */
+        text-align: center;
+        /* Center text */
+    }
+}
+
+@media (min-width: 1189px) {
+    header img {
+        display: block;
+        /* Show image on desktop */
+        width: 230px;
+        /* Larger image on desktop */
+        /* left: 150px; */
+        /* Position adjustment for desktop */
+    }
 }
